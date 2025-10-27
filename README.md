@@ -3,7 +3,7 @@
 <br />
  
 <div align="center">
-<img src="https://i.imgur.com/w8tTOuT.png" title="source: imgur.com" /> 
+<img width="1024" height="1024" alt="image" src="https://github.com/user-attachments/assets/ebdfcac7-a942-4f20-a3f2-5cb04e4ebe61" />
 </div>
  
 <br />
@@ -59,48 +59,49 @@ O diagrama abaixo representa a estrutura e o relacionamento entre as principais 
 <br />
  
 ```mermaid
-class Produto {
-  - id : Long
-  - nome : String
-  - preco : Double
-  - quantidade : Integer
-  - foto : String
-  - categoria : Categoria
-}
-class Categoria {
-  - id : Long
-  - nome : String
-  - descricao : String
-  - produtos : List<Produto>
-}
-Categoria "1" -- "0..*" Produto : classifica
+
+classDiagram
+    direction LR
+
+    class tb_usuarios {
+        +BIGINT id <<PK>>
+        DATE data_nascimento
+        VARCHAR foto "VARCHAR(5000)"
+        VARCHAR nome "VARCHAR(255)"
+        VARCHAR senha "VARCHAR(255)"
+        VARCHAR usuario "VARCHAR(255)"
+    }
+
+    class tb_categorias {
+        +BIGINT id <<PK>>
+        VARCHAR tipo "VARCHAR(255)"
+    }
+
+    class tb_produtos {
+        +BIGINT id <<PK>>
+        VARCHAR descricao "VARCHAR(100)"
+        VARCHAR foto "VARCHAR(255)"
+        VARCHAR marca "VARCHAR(100)"
+        VARCHAR nome "VARCHAR(100)"
+        DECIMAL preco "DECIMAL(38,2)"
+        BIGINT categoria_id <<FK>>
+    }
+
+    tb_categorias "1" --> "many" tb_produtos : possui
  
 ```
  
 <br />
  
 ## 4. Diagrama Entidade-Relacionamento (DER)
- 
-O DER (Diagrama Entidade-Relacionamento) representa como os dados estão estruturados e interligados no banco de dados relacional (MySQL).
- 
+<br />
 
-```mermaid
-erDiagram
-    tb_categorias ||--o{ tb_produtos : classifica
-    tb_categorias {
-        bigint id PK
-        varchar nome
-        varchar descricao
-    }
-    tb_produtos {
-        bigint id PK
-        varchar nome
-        decimal preco
-        int quantidade
-        varchar foto
-        bigint categoria_id FK
-    }
-```
+O DER (Diagrama Entidade-Relacionamento) representa como os dados estão estruturados e interligados no banco de dados relacional (MySQL).
+
+
+<div align="center">c	<img width="610" height="479" alt="image" src="https://github.com/user-attachments/assets/68f5562f-a55a-494f-ab8b-a184196dbbb6" />
+
+</div>>
 
  
 ## 5. Tecnologias utilizadas
