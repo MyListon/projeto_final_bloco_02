@@ -1,0 +1,507 @@
+type: collection.insomnia.rest/5.0
+name: Farmacia
+meta:
+  id: wrk_bca74940b6d2461eb1cae21076ee11be
+  created: 1761574557149
+  modified: 1761574557149
+  description: ""
+collection:
+  - name: Produto
+    meta:
+      id: fld_bbac960d362f4d89997623422514a641
+      created: 1760443088876
+      modified: 1760706677993
+      sortKey: -1760443088876
+      description: ""
+    children:
+      - url: http://localhost:8081/produtos
+        name: Listar Todos
+        meta:
+          id: req_68df95e348f34748b099699aeab79979
+          created: 1760443134929
+          modified: 1760706847981
+          isPrivate: false
+          description: ""
+          sortKey: -1760443134929
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.6.1
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8081/produtos/1
+        name: Procurar por ID
+        meta:
+          id: req_a4685606d88d4e87a800c5bc90fec526
+          created: 1760443817612
+          modified: 1761578456855
+          isPrivate: false
+          description: ""
+          sortKey: -1760443817612
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.6.1
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8081/produtos/nome/remedio
+        name: Procurar por Nome
+        meta:
+          id: req_35211600931b4db1b12fc5abad58bdf6
+          created: 1760448720803
+          modified: 1761578438012
+          isPrivate: false
+          description: ""
+          sortKey: -1760443476270.5
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.6.1
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8081/produtos
+        name: Criar Produto
+        meta:
+          id: req_2e0b9654540249689ff815995f333c57
+          created: 1760450053689
+          modified: 1761578476365
+          isPrivate: false
+          description: ""
+          sortKey: -1760450053689
+        method: POST
+        body:
+          mimeType: application/json
+          text: >-
+            {
+                "nome": "Remédio",
+                    "preco": 19.90,
+                    "quantidade": 60,
+            		"foto": "https://ik.imagekit.io/chtshgvyu/produtos_farmacia/produto_08.png?updatedAt=1761577557476",
+                "categoria": {
+                    "id": 1  
+                }
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.6.1
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8081/produtos
+        name: Atualizar Produto
+        meta:
+          id: req_37d36d4d7a2347a7958b5e58cfd83d46
+          created: 1760451604782
+          modified: 1760707170927
+          isPrivate: false
+          description: ""
+          sortKey: -1760446935650.5
+        method: PUT
+        body:
+          mimeType: application/json
+          text: >-
+            {
+            		"id": 1,
+            		"nome": "Baldurs Gate 3 - Atualizado",
+            		"preco": 299.99,
+            		"quantidade": 25,
+            		"categoria": {
+            			"id": 1,
+            			"nome": "RPG",
+            			"descricao": "Jogos com foco em narrativa e progressão de personagem"
+            		}
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.6.1
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8081/produtos/12
+        name: Deletar Produto
+        meta:
+          id: req_e438b7ef14dc4dfc862f5dcd06e92abb
+          created: 1760452530463
+          modified: 1761578493026
+          isPrivate: false
+          description: ""
+          sortKey: -1760443646941.25
+        method: DELETE
+        headers:
+          - name: User-Agent
+            value: insomnia/11.6.1
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: Categoria
+    meta:
+      id: fld_268f106fc2da43d9bc8740d3a3aaa207
+      created: 1760532916019
+      modified: 1760706758930
+      sortKey: -1760443088826
+      description: ""
+    children:
+      - url: http://localhost:8081/categorias
+        name: Consultar todas as Categorias
+        meta:
+          id: req_46662d7995be46c0809c5949e771375a
+          created: 1760532916021
+          modified: 1760707377163
+          isPrivate: false
+          description: ""
+          sortKey: -1760443134929
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.6.1
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8081/categorias/1
+        name: Consultar por ID
+        meta:
+          id: req_c933b7ead748433a911c54a38a99210f
+          created: 1760532916023
+          modified: 1760707942037
+          isPrivate: false
+          description: ""
+          sortKey: -1760443817612
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.6.1
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8081/categorias/nome/medicamentos
+        name: Consultar Categorias por Nome
+        meta:
+          id: req_95d8ec5ed36c4bea863d769839f1aae1
+          created: 1760532916025
+          modified: 1761574739251
+          isPrivate: false
+          description: ""
+          sortKey: -1760443476270.5
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.6.1
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8081/categorias
+        name: Cadastrar Categoria
+        meta:
+          id: req_a5c1c00184944f4dad83d4057189830c
+          created: 1760532916026
+          modified: 1761577280460
+          isPrivate: false
+          description: ""
+          sortKey: -1760450053689
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"nome": "Cosméticos",
+              "descricao": "Higiene pessoal em geral"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.6.1
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8081/categorias
+        name: Atualizar Categoria
+        meta:
+          id: req_6438eca766984e58b511c81a3917614a
+          created: 1760532916028
+          modified: 1761574792462
+          isPrivate: false
+          description: ""
+          sortKey: -1760446935650.5
+        method: PUT
+        body:
+          mimeType: application/json
+          text: |
+            {
+            	"id": 1,
+            	"nome": "MEDICAMENTOS",
+            	"descricao": "Medicamentos e vitaminas"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.6.1
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8081/categorias/2
+        name: Deletar Categoria
+        meta:
+          id: req_a36c7d498fea48e5ac9dfacba778d2d6
+          created: 1760532916029
+          modified: 1761574824998
+          isPrivate: false
+          description: ""
+          sortKey: -1760443646941.25
+        method: DELETE
+        headers:
+          - name: User-Agent
+            value: insomnia/11.6.1
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: Usuario
+    meta:
+      id: fld_b9a187581891457cb96c8b3d757d3466
+      created: 1761582565284
+      modified: 1761582565284
+      sortKey: -1761582565284
+      description: ""
+    children:
+      - url: http://localhost:8081/usuarios/all
+        name: Consultar todos os Usuários
+        meta:
+          id: req_26090bfe61e14036a95bc47165ae05e7
+          created: 1761582568965
+          modified: 1761584119943
+          isPrivate: false
+          description: ""
+          sortKey: -1761582568965
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.6.2
+            id: pair_60a45e99a8aa4697b7ea88424c66d520
+          - id: pair_f03352de25844343a5e7d8f7d275ec14
+            name: Authorization
+            value: Bearer
+              eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhZG1pbkBlbWFpbC5jb20uYnIiLCJpYXQiOjE3NjE1ODQxMDYsImV4cCI6MTc2MTU4NzcwNn0.J4uV_IJ68xLqDKhEQGDmjlgbJ7c9N3VCg_xmua1hslh8_0J3BFU5Uho3g6t1wgIE
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8081/usuarios/1
+        name: Consultar por ID
+        meta:
+          id: req_a844c2af60534780839a76a0f4cc0a40
+          created: 1761582658406
+          modified: 1761584165431
+          isPrivate: false
+          description: ""
+          sortKey: -1761582658406
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.6.2
+            id: pair_5d96e8d3d4a44f1eb8a5d00b466edd65
+          - id: pair_44ee87a27ccd4209996dbde169e012e4
+            name: Authorization
+            value: Bearer
+              eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhZG1pbkBlbWFpbC5jb20uYnIiLCJpYXQiOjE3NjE1ODQxMDYsImV4cCI6MTc2MTU4NzcwNn0.J4uV_IJ68xLqDKhEQGDmjlgbJ7c9N3VCg_xmua1hslh8_0J3BFU5Uho3g6t1wgIE
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8081/usuarios/logar
+        name: Autenticar Usuário
+        meta:
+          id: req_d2e5f958dc944829ac1f1f227d4f8d50
+          created: 1761582673178
+          modified: 1761583946185
+          isPrivate: false
+          description: ""
+          sortKey: -1761582673178
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"usuario" : "admin@email.com.br",
+            	"senha" : "admin123"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.6.2
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8081/usuarios/cadastrar
+        name: Cadastrar Usuário
+        meta:
+          id: req_efb478d206d44942b68d2c715df15baf
+          created: 1761582692588
+          modified: 1761584245459
+          isPrivate: false
+          description: ""
+          sortKey: -1761582692588
+        method: POST
+        body:
+          mimeType: application/json
+          text: >-
+            {
+            	"nome" : "Alanis Lima",
+            	"usuario" : "alanis_lima@email.com.br",
+            	"senha" : "alanis123",
+            	"foto" : "https://ik.imagekit.io/chtshgvyu/imagens_usuarios/09.jpg?updatedAt=1760970317982",
+            	"dataNascimento" : "1995-06-26"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.6.2
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8081/usuarios/atualizar
+        name: Atualizar Usuário
+        meta:
+          id: req_c6c0cf0c85514c3cb0568c952c8cf481
+          created: 1761582718035
+          modified: 1761584392862
+          isPrivate: false
+          description: ""
+          sortKey: -1761582718035
+        method: PUT
+        body:
+          mimeType: application/json
+          text: >-
+            {
+            	"id" : 2,
+            	"nome" : "Alanis Lima - Update",
+            	"usuario": "alanis_lima@email.com.br",
+            	"senha": "$2a$10$XpS0T/9nEB0Gr91OhJhj8.6HQWc3pk3D7bmtVQak9mpUTDGYuajni",
+            	"foto": "https://ik.imagekit.io/chtshgvyu/imagens_usuarios/09.jpg?updatedAt=1760970317982",
+            	"dataNascimento": "1995-06-26"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+            id: pair_d9093a9d92cb4a04a50d0c394e321922
+          - name: User-Agent
+            value: insomnia/11.6.2
+            id: pair_34c6690a565c4f7eb8aec50836f0cb55
+          - id: pair_25afe762c2484e45bbc6290ca50b90df
+            name: Authorization
+            value: Bearer
+              eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhZG1pbkBlbWFpbC5jb20uYnIiLCJpYXQiOjE3NjE1ODQxMDYsImV4cCI6MTc2MTU4NzcwNn0.J4uV_IJ68xLqDKhEQGDmjlgbJ7c9N3VCg_xmua1hslh8_0J3BFU5Uho3g6t1wgIE
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_8578c2ff262546bca4e4ec4159328b60
+    created: 1760443030771
+    modified: 1760443030771
+environments:
+  name: Base Environment
+  meta:
+    id: env_f6c4acb20b424d30a97ecc5771f1a016
+    created: 1760443030768
+    modified: 1760443030768
+    isPrivate: false
